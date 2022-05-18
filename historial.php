@@ -71,8 +71,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
       
-        <li><a href="#" class="nav-link px-2 link-primary fs-4 fw-bold" >Inicio</a></li>
-        <li><a href="catalogo.php" class="nav-link px-2 link-dark fs-4 fw-bold">Catalogo</a></li>
+      <li><a href="home.php" class="nav-link px-2 link-primary fs-4 fw-bold" >Inicio</a></li>
+        <li><a href="categorias.php" class="nav-link px-2 link-dark fs-4 fw-bold">Catalogo</a></li>
       
       
       <?php 
