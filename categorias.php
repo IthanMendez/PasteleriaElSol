@@ -49,7 +49,7 @@ require_once('./php/component.php');
         elseif(isset($_SESSION['login_admin'])){
           ?>
             <a href="pedidospendientes.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pedidos</a>
-            <a href="register.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pagos</a>
+            <a href="visual_Pagos.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pagos</a>
             <a href="inventario.php" class="nav-link px-2 link-dark fs-4 fw-bold">Inventario</a>
             </ul>
           <?php
