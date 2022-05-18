@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include_once 'database\conexion.php';
+	include_once '..\database\conexion.php';
   $objeto = new Conexion();
   $conexion = $objeto->Conectar();
  
@@ -8,18 +8,18 @@
 			try{
 				$nombreCliente = $_POST['nombreCliente'];
 				$correo = $_POST['correo'];
-        // md5 encrypted
-				$contrasena = md5($_POST['password']);
-        $fechaIngreso = date('Y-m-d');
+				$contrasena = $_POST['contrasena'];
+				$numTelefono = $_POST['numTelefono'];
 				
-        $sql = "INSERT INTO cuenta (numCuenta, idFormaPago, correo, contrasena, nombreCliente, fechaIngreso, idDireccion)
-                        VALUES (NULL, NULL, '$correo', '$contrasena', '$nombreCliente', '$fechaIngreso', NULL)";
+        $sql = "INSERT INTO cuenta (numCuenta, correo, contrasena, nombreCliente, numTelefono, direccion)
+                        VALUES (NULL, '$correo', '$contrasena', '$nombreCliente', '$numTelefono', NULL)";
+												echo $sql;
         $resultado = $conexion->prepare($sql);
         $resultado->execute();
 			}catch(PDOException $e){
 				echo $e->getMessage();
 			}
 			$_SESSION['message']=array("text"=>"User successfully created.","alert"=>"info");
-			header('location:catalogo.php');
+			header('location:..\login.php');
 	}
 ?>
