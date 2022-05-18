@@ -34,6 +34,7 @@
 
         if(isset($_SESSION['login_user'])){
           ?>
+	    <a href="historial.php" class="nav-link px-2 link-dark fs-4 fw-bold">Historial</a>
           </ul>
           <?php 
           require_once("php/usernav.php");
