@@ -13,7 +13,7 @@ class Conexion{
             die("El error de conexión es: ". $e->getMessage());
         }
     }
-    
+
     public static function ConectarSqli() {        				        
         try{
             $db = mysqli_connect(servidor,usuario,password,nombre_bd);
