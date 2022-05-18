@@ -1,3 +1,10 @@
+<?php
+session_start();
+include_once 'database\conexion.php';
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
+require_once('./php/component.php');
+?>
 <!doctype html>
 <html lang="en">
   <head> 
@@ -6,51 +13,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="#" />
-    <title>Inicio</title>
+    <title>Inventario</title>
     <!-- Otros -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylecat.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css">
     <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.11.4/css/dataTables.bootstrap5.min.css">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'>
   </head>
-
-
-<header class="p-3 mb-3 border-bottom">
   
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
-        
-      <a href="catalogo.php">
-        <img src="img/sunlogo2.png"  width="40%" height="50%" class="rounded mx-auto d-block" alt="Responsive image">
-      </a>
-      
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        
-          <li><a href="#" class="nav-link px-2 link-primary fs-4 fw-bold" >Inicio</a></li>
-          <li><a href="catalogo.php" class="nav-link px-2 link-dark fs-4 fw-bold">Catalogo</a></li>
-        </ul>
-        
-        <?php 
+  <body class="min-vh-100">
 
-          if(isset($_SESSION['login_user'])){
-            require_once("php/usernav.php");
-          }
-			 elseif(isset($_SESSION['login_admin'])){
-            require_once("php/adminnav.php");?>
-				<a href="login.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pedidos</a>
-        <a href="register.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pagos</a>
-		  <a href="register.php" class="nav-link px-2 link-dark fs-4 fw-bold">Inventario</a>
-		  <?php
-          }
-          else{
-            ?>
-            <a href="login.php" class="nav-link px-2 link-dark fs-4 fw-bold"  >Inicia Sesión</a>
-        <a href="register.php" class="nav-link px-2 link-dark fs-4 fw-bold">Registrate</a>
-        <?php
-          }
-        ?>
-        <!--php require_once("php/carticon.php")-->
-      </div>
+  <header class="p-3 mb-3 border-bottom">
+    
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
+      
+    <a href="catalogo.php">
+      <img src="img/sunlogo2.png"  width="30%" height="40%" class="rounded mx-auto d-block" alt="Responsive image">
+    </a>
+    
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+      
+        <li><a href="#" class="nav-link px-2 link-primary fs-4 fw-bold" >Inicio</a></li>
+        <li><a href="catalogo.php" class="nav-link px-2 link-dark fs-4 fw-bold">Catalogo</a></li>
+      
+      
+      <?php 
+
+        if(isset($_SESSION['login_user'])){
+          ?>
+          </ul>
+          <?php 
+          require_once("php/usernav.php");
+        }
+        elseif(isset($_SESSION['login_admin'])){
+          ?>
+            <a href="pedidospendientes.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pedidos</a>
+            <a href="register.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pagos</a>
+            <a href="inventario.php" class="nav-link px-2 link-dark fs-4 fw-bold">Inventario</a>
+            </ul>
+          <?php
+          require_once("php/usernav.php");
+        }
+        else{
+          ?>
+          </ul>
+          <a href="login.php" class="nav-link px-2 link-dark fs-4 fw-bold"  >Ingresar</a>
+          
+          <?php
+        }
+      ?>
     </div>
   </header>
 
