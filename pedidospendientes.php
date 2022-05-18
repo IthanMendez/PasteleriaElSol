@@ -1,7 +1,9 @@
 <?php
+session_start();
 include_once 'database\conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
+require_once('./php/component.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,6 +33,7 @@ $conexion = $objeto->Conectar();
       
       <li><a href="home.php" class="nav-link px-2 link-primary fs-4 fw-bold" >Inicio</a></li>
         <li><a href="categorias.php" class="nav-link px-2 link-dark fs-4 fw-bold">Catalogo</a></li>
+        
       
       
       <?php 
@@ -38,6 +41,7 @@ $conexion = $objeto->Conectar();
         if(isset($_SESSION['login_user'])){
           ?>
             <a href="historial.php" class="nav-link px-2 link-dark fs-4 fw-bold">Historial</a>
+            <li><a href="pedido.php" class="nav-link px-2 link-dark fs-4 fw-bold">Realizar Pedido</a></li>
           </ul>
           <?php 
           require_once("php/usernav.php");
@@ -63,15 +67,13 @@ $conexion = $objeto->Conectar();
   </header>
   <body class="min-vh-100">
   <br>
-    <h3 class="text-center text-light">
+    <h3 class="text-center text-dark">
       Pedidos pendientes
     </h3>
     <br>
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-          <button type="button" class="btn btn-success" id="agregar" data-bs-toggle="modal">Agregar producto</button>
-        </div>
+        
       </div>
     </div>
     <br>

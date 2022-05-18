@@ -38,6 +38,7 @@ $db = $objeto2->ConectarSqli();
       
       <li><a href="home.php" class="nav-link px-2 link-primary fs-4 fw-bold" >Inicio</a></li>
         <li><a href="categorias.php" class="nav-link px-2 link-dark fs-4 fw-bold">Catalogo</a></li>
+        
       
       
       <?php 
@@ -45,6 +46,7 @@ $db = $objeto2->ConectarSqli();
         if(isset($_SESSION['login_user'])){
           ?>
             <a href="historial.php" class="nav-link px-2 link-dark fs-4 fw-bold">Historial</a>
+            <li><a href="pedido.php" class="nav-link px-2 link-dark fs-4 fw-bold">Realizar Pedido</a></li>
           </ul>
           <?php 
           require_once("php/usernav.php");
