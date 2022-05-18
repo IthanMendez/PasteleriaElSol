@@ -82,7 +82,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if(isset($_SESSION['login_user'])){
           ?>
-          <a href="historial.php" class="nav-link px-2 link-dark fs-4 fw-bold">Historial</a>
           </ul>
           <?php 
           require_once("php/usernav.php");
@@ -90,7 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         elseif(isset($_SESSION['login_admin'])){
           ?>
             <a href="pedidospendientes.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pedidos</a>
-            <a href="register.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pagos</a>
+            <a href="visual_Pagos.php" class="nav-link px-2 link-dark fs-4 fw-bold">Pagos</a>
             <a href="inventario.php" class="nav-link px-2 link-dark fs-4 fw-bold">Inventario</a>
             </ul>
           <?php
@@ -103,10 +102,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           
           <?php
         }
-        
       ?>
     </div>
-    
   </header>
 
 
